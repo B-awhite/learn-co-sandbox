@@ -1,8 +1,6 @@
 # Gradhits
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/gradhits`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+In this app a user will be asked to input the year they graduated being from highschool, college, etc. That input will then take them to a lists of genres where they can select a genre of their choice. That selection will then take them to a list of song in that genre from the year they provided.
 
 ## Installation
 

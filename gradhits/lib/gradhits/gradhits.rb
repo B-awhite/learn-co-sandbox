@@ -10,4 +10,4 @@ class Gradhits
     @@all 
   end 
   
-end 
+end

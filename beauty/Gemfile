@@ -4,3 +4,7 @@ source "https://rubygems.org"
 
 ruby
 gem 'beauty'
+
+gem 'httparty', '~> 0.18.1'
+
+gem 'pry'

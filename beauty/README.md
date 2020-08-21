@@ -1,6 +1,6 @@
 # Beauty
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/beauty`. To experiment with that code, run `bin/console` for an interactive prompt.
+In this app a user can select a beauty make-up brand and be provided with a list of all the products made by the brand of their selection. 
 
 TODO: Delete this and the text above, and describe your gem
 

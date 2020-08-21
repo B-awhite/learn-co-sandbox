@@ -1,10 +1,16 @@
 class Api 
-  
-  def self.get_beauty(brand)
-    url = "http://makeup-api.herokuapp.com/api/v1/products.json?brand=#{brand}"
+  #gets a list of items made by that brand
+  def self.get_beauty(product)
+    url = "http://makeup-api.herokuapp.com/api/v1/products.json?brand=fenty&product_type=#{product}"
     response = HTTParty.get(url)
-    binding.pry
-  end
-  
+    response.each do |p|
+      name = p["name"]
+      price = p["price"]
+      Beauty.new(name, price)
+    #binding.pry
+    end
+  #binding.pry
+  end 
 end 
 
+# [].each   product_color: => [{colour_name: " "}]

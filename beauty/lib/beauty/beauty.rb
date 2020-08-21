@@ -2,7 +2,10 @@ class Beauty
   
   @@all = []
   
-  def initialize
+  attr_accessor :product_type, :product_color
+  
+  def initialize(attributes)
+    attributes.each {|key, value| self.send(("#{key}="), value)}
     @@all << self 
   end 
   

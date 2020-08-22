@@ -15,9 +15,15 @@ class Beauty
   end 
   
   def self.select_product(product)
-     Beauty.all.each_with_index do |p|
-      puts "#{p.name}"
+     Beauty.all.each.with_index(1) do |p, index|
+      puts "#{index} #{p.name}"
      end
+  end 
+  
+  def self.select_pricing
+    self.all.map do |p| 
+      puts "#{p.price}"
+    end
   end 
   
 end

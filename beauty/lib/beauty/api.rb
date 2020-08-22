@@ -7,10 +7,8 @@ class Api
       name = p["name"]
       price = p["price"]
       Beauty.new(name, price)
-    #binding.pry
     end
-  #binding.pry
   end 
+  
 end 
 
-# [].each   product_color: => [{colour_name: " "}]

@@ -1,6 +1,6 @@
 # Beauty
 
-In this app a user can select a beauty make-up brand and be provided with a list of all the products made by the brand of their selection. 
+In this app a user can select a make-up product and be provided with a list of their chosen product by the names of each item. The user then has the option to see the price of an item if they'd like by choosing an item from the list they were provided. 
 
 TODO: Delete this and the text above, and describe your gem
 

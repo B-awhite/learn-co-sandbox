@@ -2,7 +2,7 @@ class Cli
   
   def start 
     puts "Do you love Fenty Beauty?"
-    puts "Enter a product"
+    puts "Enter a product, lipstick, eyeliner, foundation."
     product = gets.strip.downcase
     Api.get_beauty(product)
     Beauty.select_product(product)

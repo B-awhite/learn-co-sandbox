@@ -13,11 +13,24 @@ class Cli
     puts "Would you like to get pricing"
     input = gets.strip.downcase
     if input == "yes" 
-      Beauty.select_pricing 
+      pricing  
     elsif input == "no"   
-      puts "That's fine"
-    else
       puts "Have a good day"
+    else
+      self.price_option
+    end 
+  end 
+  
+  def pricing 
+    puts "Select item"
+    item = gets.strip.downcase
+    if item == "1"
+      Beauty.select_pricing
+    elsif item == "2"
+      Beauty.select_pricing
+    else 
+      puts "Invalid entry"
+      self.pricing
     end 
   end 
   

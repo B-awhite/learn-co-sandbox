@@ -20,6 +20,11 @@ class Beauty
      end
   end 
   
+  # def prices
+  #   self.select_product.all.find{|p| p.price}
+  
+  # end
+  
   def self.select_pricing
     self.all.map do |p| 
       puts "#{p.price}"

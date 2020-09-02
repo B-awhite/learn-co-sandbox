@@ -9,18 +9,6 @@ class Cli
     self.pricing
   end
   
-  # def price_option
-  #   puts "Would you like to get pricing"
-  #   input = gets.strip.downcase
-  #   if input == "yes" 
-  #     pricing  
-  #   elsif input == "no"   
-  #     puts "Have a good day"
-  #   else
-  #     self.price_option
-  #   end 
-  # end 
-  
   def pricing 
     puts "Would you like to see prices?"
     item = gets.strip.downcase

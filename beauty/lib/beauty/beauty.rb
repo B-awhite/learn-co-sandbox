@@ -19,11 +19,11 @@ class Beauty
       puts "#{index} #{p.name}"
      end
   end 
-  
+
   def self.select_pricing(item)
      Beauty.all.each.with_index(1) do |p, index|
       puts "#{index} #{p.name}, $#{p.price}"
      end
-  end 
+   end
   
 end

@@ -10,16 +10,25 @@ class Cli
   end
   
   def pricing 
-    puts "Would you like to see prices?"
-    item = gets.strip.downcase
-    if item == "yes"
-      Beauty.select_pricing(item)
-    elsif item == "no"
-      puts "See you soon"
-    else 
-      puts "Invalid entry"
-      self.pricing
-    end 
+    puts "Type in the number of which product you'd like to get pricing on?"
+    item = gets.strip.to_i
+    beauty = Beauty.all[item-1]
+     puts "$#{beauty.price}"
+     self.whats_next
   end 
   
+  def whats_next
+    puts "Would you like to select another product?"
+    item = gets.strip.downcase
+    if item == "yes"
+      Beauty.all.clear
+      start
+    elsif item == "no"
+      puts "See you soon"
+      exit
+    else 
+      puts "Invalid entry"
+      self.whats_next
+    end 
+  end
 end 

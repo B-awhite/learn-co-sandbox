@@ -20,15 +20,24 @@ class Beauty
      end
   end 
   
-  # def prices
-  #   self.select_product.all.find{|p| p.price}
+  # def self.find 
+  #   self.select_product.each.map do |p|
   
-  # end
+  # def self.find_products
+  #   Beauty.select_product.find do |p|
+  #     puts "#{p.name}"
+  #   end 
+  # end 
   
-  def self.select_pricing
-    self.all.map do |p| 
-      puts "#{p.price}"
-    end
+  # def self.select_pricing(item)
+  #   Beauty.all.each.with_index(1) do |p, index| 
+  #     puts "#{index} #{p.price}" 
+  #   end
+  # end 
+  def self.select_pricing(item)
+     Beauty.all.each.with_index(1) do |p, index|
+      puts "#{index} #{p.name}, $#{p.price}"
+     end
   end 
   
 end

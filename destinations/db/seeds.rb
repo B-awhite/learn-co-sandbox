@@ -1,0 +1,6 @@
+# Destination.create(name:"Paris", location:"France") 
+# Destination.create(name:"Santorini", location:"Greece")
+# Destination.create(name:"Rome", location:"Italy")
+# Destination.create(name:"Phukett", location:"Thailand")
+# Destination.create(name:"Split", location:"Croatia")
+# Destination.create(name:"Rio de Janeiro", location:"Brazil")

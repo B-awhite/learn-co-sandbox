@@ -2,3 +2,9 @@
 <h3> <%= @destination.name %> </h3>
 
 <a href=<%="/destinations/#{@destination.id}/edit"%>> <button> Edit </button></a>
+<br>
+<br>
+<form method="post" action="/destinations/<%=@destination.id%>" >
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete">
+</form>

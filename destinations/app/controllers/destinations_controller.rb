@@ -30,4 +30,10 @@ class DestinationsController < ApplicationController
     redirect "/destinations/#{destination.id}"
   end 
   
+  delete "/destinations/:id" do 
+    destination = Destination.find_by(id:params[:id])
+    destination.destroy
+    redirect "/destinations"
+  end
+  
 end 

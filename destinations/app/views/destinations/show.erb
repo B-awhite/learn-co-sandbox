@@ -1,1 +1,4 @@
-<h2> <%= @destination.name %> </h2>
+<h2> <%= @destination.location %> </h2>
+<h3> <%= @destination.name %> </h3>
+
+<a href=<%="/destinations/#{@destination.id}/edit"%>> <button> Edit </button></a>

@@ -2,6 +2,6 @@
 
 <ul>
 <% @destinations.each do |destination| %>
-  <li> <%= destination.location %> </li>
+  <a href="/destinations/<%= destination.id %>"></a><li> <%= destination.location %> </li></a>
 <% end %>
 </ul>

@@ -5,10 +5,13 @@ class UsersController < ApplicationController
   end 
   
   post '/signup' do 
-     user = User.new(params[:id])
+     user = User.create(params)
      if user.username.empty? || user.password.empty?
         @error = "Must have username and password"
-        erb :'users/signup'
+        erb :'/users/signup'
+     elsif User.find_by(username: user.username)
+         @error = "Username already exists"
+         erb :'/users/signup'
      else
         user.save
         session[:user_id] = user.id

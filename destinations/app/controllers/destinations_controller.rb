@@ -1,6 +1,7 @@
 class DestinationsController < ApplicationController
   
   get "/destinations" do
+    # user = User.find(session[:user_id])
     @destinations = Destination.all 
     erb :"/destinations/index"
   end 
@@ -9,9 +10,13 @@ class DestinationsController < ApplicationController
     erb :"/destinations/new"
   end
   
-  get '/destinations/:id' do 
-    @destination = Destination.find_by_id(params[:id])
-    erb :"/destinations/show"
+  get '/destinations/:id' do
+     if session[:user_id]
+       @destination = Destination.find_by_id(params[:id])
+       erb :"/destinations/show"
+     else 
+       redirect "/"
+     end 
   end 
   
   post '/destinations' do 

@@ -12,7 +12,7 @@ class DestinationsController < ApplicationController
   
   get '/destinations/:id' do
      if session[:user_id]
-       @destination = Destination.find_by_id(params[:id])
+       find_destination
        erb :"/destinations/show"
      else 
        redirect "/"
@@ -25,22 +25,29 @@ class DestinationsController < ApplicationController
   end 
   
   get "/destinations/:id/edit" do 
-    @destination = Destination.find_by(id:params[:id])
+    find_destination
     erb :"/destinations/edit"
   end 
   
   patch "/destinations/:id" do
-    destination = Destination.find_by(id:params[:id])
+    find_destination
     if current_user.id = destination.user_id
-      destination.update(params[:destination])
-      redirect "/destinations/#{destination.id}"
+      @destination.update(params[:destination])
+      redirect "/destinations/#{@destination.id}"
     end
   end 
   
   delete "/destinations/:id" do 
-    destination = Destination.find_by(id:params[:id])
-    destination.destroy
+    find_destination
+    @destination.destroy
     redirect "/destinations"
   end
+  
+  
+  private 
+  
+  def find_destination
+    @destination = Destination.find_by(id:params[:id])
+  end 
   
 end 

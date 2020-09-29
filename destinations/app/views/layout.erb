@@ -14,12 +14,22 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-    <div>
-      <div><a href="/signup">Sign Up</a></div>
-      <div><a href="/login">Login</a></div>
-    </div>
     <div class="wrapper">
-
+      <nav class="menu">
+      <% if session[:user_id] %>
+        <ul> 
+          <li><a href="/destinations">Dream Destinations</a></li>
+          <li><a href="/destinations/new">New Destination</a></li>
+          <form method="post" action="/logout">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Logout">
+          </form>
+        <% else %> 
+          <li><a href="/signup">Sign Up</a></li>
+          <li><a href="/login">Log In</a></li>
+        </ul>
+        <% end %>
+        </nav>
         <%= yield %>
 
       <footer class="branding">

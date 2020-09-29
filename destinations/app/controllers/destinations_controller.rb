@@ -1,8 +1,8 @@
 class DestinationsController < ApplicationController
   
   get "/destinations" do
-    @destinations = Destination.all
-    erb :"/destinations/index"
+      @destinations = Destination.all
+      erb :"/destinations/index"
   end 
   
   get "/destinations/new" do 
@@ -14,7 +14,7 @@ class DestinationsController < ApplicationController
   end
   
   get "/destinations/:id" do
-     if session[:user_id]
+     if logged_in?
        find_destination
        erb :"/destinations/show"
      else 
@@ -34,7 +34,7 @@ class DestinationsController < ApplicationController
   
   patch "/destinations/:id" do
     find_destination
-    if current_user.id = destinations.user_id
+     if logged_in?
       @destination.update(params[:destination])
       redirect "/destinations/#{@destination.id}"
     end

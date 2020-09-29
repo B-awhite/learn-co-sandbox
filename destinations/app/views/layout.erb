@@ -16,7 +16,7 @@
   <body>
     <div class="wrapper">
       <nav class="menu">
-      <% if session[:user_id] %>
+      <% if logged_in? %>
         <ul> 
           <li><a href="/destinations">Dream Destinations</a></li>
           <li><a href="/destinations/new">New Destination</a></li>

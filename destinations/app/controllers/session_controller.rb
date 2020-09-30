@@ -5,6 +5,7 @@ class SessionController < ApplicationController
   end 
   
   post "/login" do 
+    # binding.pry
     user = User.find_by(username: params[:username])
      if  params[:username].empty? || params[:password].empty?
          @error = "Username and password must be filled"
@@ -12,7 +13,8 @@ class SessionController < ApplicationController
      else     
           if user && user.authenticate(params[:password])
             session[:user_id] = user.id 
-            erb :"/destinations"
+            # binding.pry
+            redirect "/destinations"
           else 
              @error = "User not found"
              erb :"/users/login"

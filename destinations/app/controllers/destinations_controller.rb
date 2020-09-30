@@ -1,8 +1,8 @@
 class DestinationsController < ApplicationController
   
-  before do 
-    require_login 
-  end 
+  # before do 
+  #   require_login 
+  # end 
   
   get "/destinations" do
      @destinations = Destination.all
@@ -14,8 +14,8 @@ class DestinationsController < ApplicationController
   end
   
   post "/destinations" do 
-     destination = Destination.create(params[:destination])
-     
+    destination = current_user.destinations.create(params[:destination])
+    # destination = Destination.create(params[:destination])
       redirect "/destinations/#{destination.id}"
   end 
   

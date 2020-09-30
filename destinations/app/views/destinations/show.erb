@@ -4,7 +4,7 @@
 <a href=<%="/destinations/#{@destination.id}/edit"%>> <button> Edit </button></a>
 <br>
 <br>
-<form method="post" action="/destinations/<%=@destination.id%>" >
+<form method="post" action="/destinations<%=@destination.id%>" >
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete">
 </form>

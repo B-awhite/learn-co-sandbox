@@ -15,6 +15,7 @@ class DestinationsController < ApplicationController
   
   post "/destinations" do 
      destination = Destination.create(params[:destination])
+     
       redirect "/destinations/#{destination.id}"
   end 
   

@@ -6,5 +6,7 @@
 <br>
 <form method="post" action="/destinations<%=@destination.id%>" >
   <input type="hidden" name="_method" value="delete">
+  <% if @destination.user && @destination.user.id == current_user %>
   <input type="submit" value="Delete">
+  <% end %>
 </form>

@@ -1,30 +1,30 @@
 class DestinationsController < ApplicationController
   
-  get "/destinations" do
-      @destinations = Destination.all
-      erb :"/destinations/index"
+  before do 
+     require_login 
   end 
   
   get "/destinations/new" do 
-    if logged_in?
-      erb :"/destinations/new"
-    else 
-      redirect "/login"
-    end 
+       erb :"/destinations/new"
   end
   
-  get "/destinations/:id" do
-     if logged_in?
-       find_destination
-       erb :"/destinations/show"
-     else 
-       redirect "/"
-     end 
-  end 
+  get "/destinations" do
+       @destinations = Destination.all
+       erb :"/destinations/index"
+  end
   
   post "/destinations" do 
     destination = Destination.create(params[:destination])
     redirect "/destinations/#{destination.id}"
+  end 
+  
+  get "/destinations/:id" do
+      find_destination
+      if @destination
+         erb :"/destinations/show"
+      else 
+        redirect "/destinations"
+      end 
   end 
   
   get "/destinations/:id/edit" do 
@@ -34,10 +34,8 @@ class DestinationsController < ApplicationController
   
   patch "/destinations/:id" do
     find_destination
-     if logged_in?
       @destination.update(params[:destination])
       redirect "/destinations/#{@destination.id}"
-    end
   end 
   
   delete "/destinations/:id" do 

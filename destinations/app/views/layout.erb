@@ -15,21 +15,19 @@
   </head>
   <body>
     <div class="wrapper">
-      <nav class="menu">
+      <div>
       <% if logged_in? %>
-        <ul> 
-          <li><a href="/destinations">Dream Destinations</a></li>
-          <li><a href="/destinations/new">New Destination</a></li>
+          <div><a href="/destinations">Dream Destinations</a></div>
+          <div><a href="/destinations/new">New Destination</a></div>
           <form method="post" action="/logout">
-            <input type="hidden" name="_method" value="delete">
-            <input type="submit" value="Logout">
+            <input type="hidden" name="method" value="delete">
+            <input type="submit" value="Log out">
           </form>
         <% else %> 
-          <li><a href="/signup">Sign Up</a></li>
-          <li><a href="/login">Log In</a></li>
-        </ul>
+          <div><a href="/signup">Sign Up</a></div> 
+          <div><a href="/login">Log In</a></div>
         <% end %>
-        </nav>
+        </div>
         
         
         <%= yield %>

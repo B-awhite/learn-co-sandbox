@@ -15,7 +15,13 @@ class DestinationsController < ApplicationController
   
   post "/destinations" do 
     destination = Destination.create(params[:destination])
-    redirect "/destinations/#{destination.id}"
+    if !destination.name.empty? && !destination.location.empty?
+       destination.save 
+       redirect "/destinations/#{destination.id}"
+    else 
+      @error = "Invalid data."
+      erb :"/destinations/new"
+    end 
   end 
   
   get "/destinations/:id" do

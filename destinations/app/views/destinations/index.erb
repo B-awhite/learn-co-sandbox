@@ -1,7 +1,9 @@
-<h1> Dream Destinations</h1>
+<h1> <%=@user.username.capitalize%>'s Dream Destinations</h1>
 
 <ul>
 <% @destinations.each do |destination| %>
-  <a href="/destinations<%= destination.id %>" ><li> <%= destination.location %> </li></a>
+  <a href="/destinations/<%= destination.id %>" ><li> <%= destination.location %> </li></a>
 <% end %>
 </ul>
+
+<a href="/destinations/new">Create Destination </a>

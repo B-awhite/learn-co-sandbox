@@ -1,11 +1,12 @@
 class DestinationsController < ApplicationController
   
-  # before do 
-  #   require_login 
-  # end 
+  before do 
+    require_login 
+  end 
   
   get "/destinations" do
-     @destinations = Destination.all
+    @user = current_user
+     @destinations = current_user.destinations
       erb :"/destinations/index"
   end
   
